@@ -106,7 +106,7 @@ def main():
         test_f1 = test(model, epoch)
         if test_f1 > best_acc:
             best_acc = test_f1
-            ckpt_path = args.ckpt_dir / f"finetune_ddrel_13cls_{test_f1}_epoch_{epoch}.pt"
+            ckpt_path = args.ckpt_dir / f"{test_f1}_epoch_{epoch}.pt"
             save_model(ckpt_path, epoch, model, optimizer, test_f1)
             print(f"Saving model at {str(ckpt_path)} with acc: {test_f1}")
         print('=======end========\n')
